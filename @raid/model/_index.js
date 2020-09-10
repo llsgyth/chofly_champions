@@ -1,6 +1,7 @@
 const { Sequelize, Model, DataTypes, sequelize } = require('./_db');
 
 const Character = require('./Character.model');
+const Player = require('./Player.model');
 
 const init = () => new Promise((resolve, reject) => {
 	sequelize.sync()
@@ -78,5 +79,7 @@ module.exports = {
 	sequelize,
 	models: sequelize.models,
 	Labels,
+	// Models
 	Character
+	, Player
 }
