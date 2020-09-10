@@ -1,0 +1,37 @@
+{
+  "name": "chofly",
+  "version": "1.0.0",
+  "description": " Chofly Elite RAID Champion list",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "db:reset": "DB_LOG_QUERY=true && node db/reset.js",
+    "db:seed": "DB_LOG_QUERY=true && node db/seed.js",
+    "css": "cd _bootstrap_441 && npm run css && cd ../",
+    "cp-css": "cp -R _bootstrap_441/dist/. public/",
+    "pkg:css": "npm run css && npm run cp-css",
+    "pkg:auth": "cd ./@raid/auth && npm update && npm run v && cd ../../",
+    "pkg:db": "cd ./@raid/db && npm update && npm run v && cd ../../",
+    "pkg:model": "npm run pkg:db && cd ./@raid/model && npm update && npm run v && cd ../../",
+    "pkg:all": "npm run pkg:auth && run pkg:db && npm run pkg:model && npm update"
+  },
+  "dependencies": {
+    "@raid/auth": "file:./@raid/auth",
+    "@raid/model": "file:./@raid/model",
+    "@handlebars/allow-prototype-access": "^1.0.3",
+    "body-parser": "^1.19.0",
+    "browser-sync": "^2.26.12",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "googleapis": "^58.0.0",
+    "handlebars": "^4.7.6",
+    "pg": "^8.3.0",
+    "sequelize": "latest",
+    "serve-favicon": "^2.5.0",
+    "underscore": "^1.10.2",
+    "url-parse": "^1.4.7"
+  },
+  "author": "Llsgyth",
+  "license": "ISC"
+}

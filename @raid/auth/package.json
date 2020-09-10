@@ -1,0 +1,17 @@
+{
+  "name": "@raid/auth",
+  "version": "0.0.1",
+  "description": "For google authorization and setting authorized user.",
+  "main": "_index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "v": "echo \">>> \" $npm_package_name : $npm_package_version"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "googleapis": "^59.0.0",
+    "underscore": "^1.10.2"
+  }
+}

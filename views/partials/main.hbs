@@ -1,0 +1,56 @@
+<div class="row col-12 flex">
+  <div class="col-3">
+    <div id="sidebar-wrapper">
+      &nbsp;
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#characterSection"
+          aria-expanded="true" aria-controls="characterSection">Characters</a>
+        <a href="#" class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#artifactSection"
+          aria-expanded="false" aria-controls="artifactSection">Artifacts</a>
+        <a href="#" class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#setSection"
+          aria-expanded="false" aria-controls="setSection">Sets</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <div class="list-group list-group-flush">
+      
+      <div class="accordion" id="playerAccordion">
+        <div class="row">
+          <div id="characterSection" class="collapse show" aria-labelledby="headingOne" data-parent="#playerAccordion">
+            <h3>Characters</h3>
+            <div id="characterList"></div>
+            {{#each player.Characters}}
+              {{name}}
+            {{/each}}
+            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.<br />
+            3 wolf moon officia aute, non cupidatat skateboard dolor brunch.<br />
+            Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et.<br />
+            Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+            excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+            you probably haven't heard of them accusamus labore sustainable VHS.</p>
+            <button data-toggle="modal" data-target="#modal_aside_left" data-url="/ui/character/create" data-event="Character_Created" class="btn ml-2 btn-success" type="button">  Add Character  </button>
+          </div>
+        </div>
+        <div class="row">
+          <div id="artifactSection" class="collapse" aria-labelledby="headingTwo" data-parent="#playerAccordion">
+            <h3>Artifacts</h3>
+            {{#each player.Artifacts}}
+              {{name}}
+            {{/each}}
+          </div>
+        </div>
+        <div class="row">
+          <div id="setSection" class="collapse" aria-labelledby="headingThree" data-parent="#playerAccordion">
+            <div class="list-group list-group-flush">
+            <h3>Sets</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

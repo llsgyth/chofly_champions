@@ -1,0 +1,207 @@
+$raid-blue:    #0963b6 !default;
+$raid-indigo:  #4228b4 !default;
+$raid-purple:  #44449a !default;
+$raid-pink:    #86367d !default;
+$raid-red:     #803356 !default;
+$raid-orange:  #886337 !default;
+$raid-yellow:  #888737 !default;
+$raid-green:   #097d50 !default;
+$raid-teal:    #098e80 !default;
+$raid-cyan:    #097994 !default;
+
+$raid-font-white: #ffffff;
+$raid-font-cream: #e7e3d1;
+$raid-font-beige: #adab5b;
+$raid-font-teal: #6be9fc;
+$raid-font-green: #22e600;
+
+$raid-border-width: 2px;
+$raid-border-teal1: #4ed9fc;
+$raid-border-teal2: #11c8e3;
+$raid-border-gold: #b28324;
+$raid-border-yellow: #feeb00;
+$raid-border-black: #060f15;
+
+$raid-rarity-empty: #66603e;
+$raid-rarity-common: #aeaeae;
+$raid-rarity-uncommon: #1bcf40;
+$raid-rarity-rare: #2a97ff;
+$raid-rarity-epic: #e74aff;
+$raid-rarity-legendary: #ed8100;
+
+$raid-bg-1: #114f6d;
+$raid-bg-2: #1b4562;
+$raid-bg-3: #173a55;
+$raid-bg-4: #102b43;
+$raid-bg-5: #112b37;
+
+$raid-main-bg: #1c666a;
+$raid-dark-bg: #092a2f;
+$raid-list-group-border-radius: 40px;
+
+.raid-title {
+  color: $raid-font-teal;
+}
+
+/****** LEFT SIDEBAR ********/
+#sidebar-wrapper {
+  left: 0;
+  position: fixed;
+  font-size: 125%;
+}
+/****** backgrounds ********/
+.raid-bg-1 {
+  background-color: $raid-bg-1;
+}
+.raid-bg-2 {
+  background-color: $raid-bg-2;
+}
+.raid-bg-3 {
+  background-color: $raid-bg-3;
+}
+.raid-bg-4 {
+  background-color: $raid-bg-4;
+}
+.raid-bg-5 {
+  background-color: $raid-bg-5;
+}
+.raid-bg-main {
+  background-color: $raid-main-bg;
+}
+.raid-bg-dark {
+  background-color: $raid-dark-bg;
+}
+.wp {
+  background-image: no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+/****** BORDERS ********/
+.raid-border {
+  border: solid 2px $raid-rarity-empty;
+}
+.raid-border.empty {
+  border-color: $raid-rarity-empty;
+}
+.raid-border.common {
+  border-color: $raid-rarity-common;
+}
+.raid-border.uncommon {
+  border-color: $raid-rarity-uncommon;
+}
+.raid-border.rare {
+  border-color: $raid-rarity-rare;
+}
+.raid-border.epic {
+  border-color: $raid-rarity-epic;
+}
+.raid-border.legendary {
+  border-color: $raid-rarity-legendary;
+}
+
+/****** THUMBNAILS ********/
+.bg {
+  opacity: 0.3;
+  transition: all ease-out 0.5s;
+}
+.bg:hover {
+  opacity: 1;
+}
+
+/****** THUMBNAILS ********/
+.th {
+  background-color: $raid-bg-2;
+  height: 50px;
+  width: 50px;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: solid 2px #00000000;
+  float:left;
+  margin-right: 1em;
+}
+.th.right {
+  float:right;
+  margin-right: 0;
+  margin-left: 1em;
+}
+.th.no-float {
+  float: none;
+  margin-right: 0;
+  margin-left: 0;
+}
+.th.mini {
+  height: 20px;
+}
+.th.character {
+  border-color: $raid-border-teal2;
+  background-image: url(/images/th_character.png);
+}
+.th.sets {
+  border-color: $raid-pink;
+  background-image: url(/images/th_sets.png);
+}
+.th.life {
+  background-image: url(/images/sets/th_life.png);
+}
+.th.accuracy {
+  background-image: url(/images/sets/th_accuracy.png);
+}
+.th.avenging {
+     background-image: url(/images/sets/th_avenging.png);
+}
+.th.crit_damage {
+     background-image: url(/images/sets/th_crit_damage.png);
+}
+.th.critical_rate {
+     background-image: url(/images/sets/th_critical_rate.png);
+}
+.th.cruel {
+     background-image: url(/images/sets/th_cruel.png);
+}
+.th.curing {
+     background-image: url(/images/sets/th_curing.png);
+}
+.th.cursed {
+     background-image: url(/images/sets/th_cursed.png);
+}
+.th.daze {
+     background-image: url(/images/sets/th_daze.png);
+}
+.th.defense {
+     background-image: url(/images/sets/th_defense.png);
+}
+
+
+/****** MENUKIT ********/
+.modal .modal-dialog-aside{
+	width: 40%;
+	max-width:80%; height: 100%; margin:0;
+	transform: translate(0); transition: transform .2s;
+}
+
+.modal .modal-dialog-aside .modal-content{  
+  height: inherit; border:0; border-radius: 0;
+}
+.modal .modal-dialog-aside .modal-content .modal-body{ 
+  overflow-y: auto 
+}
+.modal.fixed-left .modal-dialog-aside{ 
+  margin-left:auto;  transform: translateX(100%); 
+}
+.modal.fixed-right .modal-dialog-aside{ 
+  margin-right:auto; transform: translateX(-100%); 
+}
+
+.modal.show .modal-dialog-aside{ 
+  transform: translateX(0);  
+}
