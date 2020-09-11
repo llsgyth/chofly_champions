@@ -6,6 +6,10 @@ const schema = {
 		allowNull: false,
 		type: DataTypes.STRING
 	}
+	, rarity: {
+		allowNull: false,
+		type: DataTypes.STRING
+	}
 	, affinity: {
 		allowNull: false,
 		type: DataTypes.STRING
@@ -18,10 +22,10 @@ const schema = {
 		allowNull: false,
 		type: DataTypes.STRING
 	}
-	, overall: {
-		allowNull: false,
-		type: DataTypes.INTEGER
-	}
+	// , overall: {
+	// 	allowNull: false,
+	// 	type: DataTypes.INTEGER
+	// }
 	, clanboss: {
 		allowNull: false,
 		type: DataTypes.INTEGER
