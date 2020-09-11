@@ -4,6 +4,7 @@ let app;
 
 app = app || express();
 app.authUser = app.authUser || null;
+app.settings = app.settings || null;
 app.isDev = isDev;
 
 const Router = express.Router({mergeParams: true});

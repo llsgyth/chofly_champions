@@ -5,7 +5,11 @@
       <table id="characterList" 
         data-toggle="table"
         data-height="800"
-        data-reorderable-columns="true">
+        data-sortable="true"
+        data-search="true"
+        data-search-align="left"
+        data-reorderable-columns="true"
+      >
         <thead class="fixed">
           <tr>
             <th data-checkbox="{{#if player}}true{{/if}}"></th>
@@ -38,7 +42,7 @@
             <td class="ch-{{rarity}}">{{rarity}}</td>
             <td class="ch-{{rarity}}">{{faction}}</td>
             <td class="ch-{{specialty}}">{{specialty}}</td>
-            <td class="ch-{{overall this true}}">{{overall this}}</td>
+            <td class="ch-{{overall this true}}">{{overall this false}}</td>
             <td class="ch-{{bookvalue}}">{{bookvalue}}</td>
             <td class="ch-{{clanboss}}">{{clanboss}}</td>
             <td class="ch-{{arena}}">{{arena}}</td>
@@ -62,7 +66,7 @@
     </div>
   </div>
 </div>
-
+{{> config}}
 <script>
   $(document).ready(() => {
     $('#characterList').bootstrapTable()

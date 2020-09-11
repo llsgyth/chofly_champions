@@ -1,3 +1,13 @@
+const { Settings } = require('@raid/model');
+let settings;
+Settings.findOne()
+	.then(r => {
+		settings = r.dataValues;
+	})
+	.catch(e => {
+		console.error(e.message || e);
+	});
+
 const eq = (x, y) => x == y;
 
 const notEq = (x, y) => !eq(x, y);
@@ -12,28 +22,14 @@ const padNum = (val, len) => {
 	return res;
 };
 
-const overall = (char, round = false) => {
-	const weights = {
-		bookvalue: 0.1,
-		clanboss: 0.2,
-		arena: 0.24,
-		farmer: 0.01,
-		factionwars: 0.07,
-		dragon: 0.05,
-		spider: 0.1,
-		fireknight: 0.09,
-		icegolem: 0.02,
-		minotaur: 0.02,
-		voidkeep: 0.02,
-		spiritkeep: 0.03,
-		magickeep: 0.03,
-		forcekeep: 0.02
-	}
+const overall = (char, round) => {
 	let result = 0;
-	Object.entries(weights).forEach((k, v) => {
-		result+=char[k[0]]*k[1];
+	Object.entries(settings).forEach((k, v) => {
+		if (char[k[0]] && k[0] !== 'id') {
+			result+=char[k[0]]*Number(k[1]);
+		}
 	});
-	return round
+	return round == true
 		? Math.round(result)
 		: result.toFixed(1);
 }
