@@ -90,10 +90,4 @@ Character.init(schema, { sequelize }, { timestamps: false });
 Character.findAllEager = (where) => Character.findAll(_.extend({ include: [{ all: true }] }, where));
 Character.findOneEager = (where) => Character.findOne(_.extend({ include: [{ all: true }] }, where));
 
-Character.associate = (models) => {
-	Character.hasMany(models.Artifact);
-	Character.belongsTo(models.Player);
-	console.log('Associated Characters!');
-}
-
 module.exports = Character;

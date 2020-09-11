@@ -2,10 +2,13 @@ const { Sequelize, Model, DataTypes, sequelize } = require('./_db');
 
 const Character = require('./Character.model');
 const Player = require('./Player.model');
+const PlayerCharacter = require('./PlayerCharacter.model');
+const Settings = require('./Settings.model');
 
 const init = () => new Promise((resolve, reject) => {
 	sequelize.sync()
-		.then((r) => {
+	.then((r) => {
+			PlayerCharacter.associate(sequelize.models);
 			console.log('Database synced!')
 			resolve(r);
 		})
@@ -17,7 +20,8 @@ const init = () => new Promise((resolve, reject) => {
 
 const reset = () => new Promise((resolve, reject) => {
 	sequelize.sync({force: true})
-		.then((r) => {
+	.then((r) => {
+			PlayerCharacter.associate(sequelize.models);
 			console.log('Database synced!')
 			resolve(r);
 		})
@@ -82,4 +86,5 @@ module.exports = {
 	// Models
 	Character
 	, Player
+	, Settings
 }
