@@ -205,3 +205,33 @@ $raid-list-group-border-radius: 40px;
 .modal.show .modal-dialog-aside{ 
   transform: translateX(0);  
 }
+
+/****** BS TABLE ******/
+
+.ch-Legendary {
+  background-color: $raid-rarity-legendary!important;
+}
+.ch-Epic {
+  background-color: $raid-rarity-epic!important;
+}
+.ch-Rare {
+  background-color: $raid-rarity-rare!important;
+}
+.ch-0 {
+  background-color: $raid-rarity-empty!important;
+}
+.ch-4, .ch-3, .ch-2, .ch-1 {
+  background-color: $raid-rarity-common!important;
+}
+.ch-6, .ch-5 {
+  background-color: $raid-rarity-uncommon!important;
+}
+.ch-8, .ch-7 {
+  background-color: $raid-rarity-rare!important;
+}
+.ch-9 {
+  background-color: $raid-rarity-epic!important;
+}
+.ch-10 {
+  background-color: $raid-rarity-legendary!important;
+}

@@ -16,10 +16,11 @@
     "pkg:all": "npm run pkg:auth && run pkg:db && npm run pkg:model && npm update"
   },
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
     "@raid/auth": "file:./@raid/auth",
     "@raid/model": "file:./@raid/model",
-    "@handlebars/allow-prototype-access": "^1.0.3",
     "body-parser": "^1.19.0",
+    "bootstrap-table": "^1.17.1",
     "browser-sync": "^2.26.12",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

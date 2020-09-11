@@ -1,38 +1,38 @@
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-secondary ml-max">
-      <div class="container flex col-12">
-          <a class="navbar-brand" href="/">ChoFly RAID Champions</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav1" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon fa fa-bars" aria-hidden="true"></i></span>
-          </button>
-          <div class="collapse navbar-collapse" id="main_nav1">
-            <ul class="navbar-nav">
-              {{#if isDev}} 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
-                  API<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/api/players?eager">Players</a></li>
-                    <li><a class="dropdown-item" href="/api/characters?eager">Characters</a></li>
-                    <li><a class="dropdown-item" href="/api/artifacts?eager">Artifacts</a></li>
-                    <li><a class="dropdown-item" href="/api/rarities?eager">Rarities</a></li>
-                    <li><a class="dropdown-item" href="/api/factions?eager">Factions</a></li>
-                    <li><a class="dropdown-item" href="/api/sets?eager">Sets</a></li>
-                  </ul>
-              </li>
-              {{/if}}
-            </ul>
-            <ul class="navbar-nav ml-auto">
-              {{#if player}}
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#modal_aside_right" href="#">{{player.emailAddress}}</a>
-              </li>
-              {{else}}
-              <li class="nav-item">
-                <a class="nav-link" href="/auth">Login</a>
-              </li>
-              {{/if}}
-            </ul>
-          </div> <!-- navbar-collapse.// -->
-      </div> <!-- container //end -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-secondary ml-max">
+  <div class="container flex col-12">
+      <a class="navbar-brand" href="/">ChoFly RAID Champions</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon fa fa-bars" aria-hidden="true"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main_nav1">
+        <ul class="navbar-nav">
+          {{#if isDev}} 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+              API<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/api/players?eager">Players</a></li>
+                <li><a class="dropdown-item" href="/api/characters?eager">Characters</a></li>
+                <li><a class="dropdown-item" href="/api/artifacts?eager">Artifacts</a></li>
+                <li><a class="dropdown-item" href="/api/rarities?eager">Rarities</a></li>
+                <li><a class="dropdown-item" href="/api/factions?eager">Factions</a></li>
+                <li><a class="dropdown-item" href="/api/sets?eager">Sets</a></li>
+              </ul>
+          </li>
+          {{/if}}
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          {{#if player}}
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#modal_aside_right" href="#">{{player.emailAddress}}</a>
+          </li>
+          {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/auth">Login</a>
+          </li>
+          {{/if}}
+        </ul>
+      </div> <!-- navbar-collapse.// -->
+  </div> <!-- container //end -->
 </nav>

@@ -1,11 +1,12 @@
 const _ = require('underscore');
 const { sequelize, Labels } = require('@raid/model');
-const source = require('./seeds/source.json');
+const source = require('./source.json');
 
-const seed = (set) => new Promise((resolve, reject) => {
+const seed = () => new Promise((resolve, reject) => {
     console.log(`\tSEEDING...`);
     Promise.all([
-        sequelize.sync()
+        sequelize.sync(),
+        source.map(c => sequelize.models.Character.upsert(c))
         // TODO: iterate through json and seeeed!
     ])
     .then((resultSet) => {

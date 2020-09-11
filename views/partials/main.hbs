@@ -1,56 +1,70 @@
-<div class="row col-12 flex">
-  <div class="col-3">
-    <div id="sidebar-wrapper">
-      &nbsp;
-      <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#characterSection"
-          aria-expanded="true" aria-controls="characterSection">Characters</a>
-        <a href="#" class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#artifactSection"
-          aria-expanded="false" aria-controls="artifactSection">Artifacts</a>
-        <a href="#" class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#setSection"
-          aria-expanded="false" aria-controls="setSection">Sets</a>
-      </div>
+<div class="row col-12">
+  <div class="row">
+    <div id="characterSection" class="collapse show" aria-labelledby="headingOne" data-parent="#playerAccordion">
+      <h3>Characters</h3>
+      <table id="characterList" 
+        data-toggle="table"
+        data-height="800"
+        data-reorderable-columns="true">
+        <thead class="fixed">
+          <tr>
+            <th data-checkbox="{{#if player}}true{{/if}}"></th>
+            <th data-field="name" data-sortable="true" data-sort-order="desc">Name</th>
+            <th data-field="rarity" data-sortable="true" data-sort-order="desc">Rarity</th>
+            <th data-field="faction" data-sortable="true" data-sort-order="desc">Faction</th>
+            <th data-field="specialty" data-sortable="true" data-sort-order="desc">Specialty</th>
+            <th data-field="overall" data-sortable="true" data-sort-order="desc">Overall</th>
+            <th data-field="bookvalue" data-sortable="true" data-sort-order="desc">Book</th>
+            <th data-field="clanboss" data-sortable="true" data-sort-order="desc">Clan Boss</th>
+            <th data-field="arena" data-sortable="true" data-sort-order="desc">Arena</th>
+            <th data-field="farmer" data-sortable="true" data-sort-order="desc">Farmer</th>
+            <th data-field="factionwars" data-sortable="true" data-sort-order="desc">Faction Wars</th>
+            <th data-field="dragon" data-sortable="true" data-sort-order="desc">Dragon</th>
+            <th data-field="spider" data-sortable="true" data-sort-order="desc">Spider</th>
+            <th data-field="minotaur" data-sortable="true" data-sort-order="desc">Minotaur</th>
+            <th data-field="fireknight" data-sortable="true" data-sort-order="desc">Fire Knight</th>
+            <th data-field="icegolem" data-sortable="true" data-sort-order="desc">Ice Golem</th>
+            <th data-field="voidkeep" data-sortable="true" data-sort-order="desc">Void Keep</th>
+            <th data-field="spiritkeep" data-sortable="true" data-sort-order="desc">Spirit Keep</th>
+            <th data-field="magickeep" data-sortable="true" data-sort-order="desc">Magic Keep</th>
+            <th data-field="forcekeep" data-sortable="true" data-sort-order="desc">Force Keep</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each characters}}
+          <tr>
+            <td></td>
+            <td class="ch-{{rarity}}">{{name}}</td>
+            <td class="ch-{{rarity}}">{{rarity}}</td>
+            <td class="ch-{{rarity}}">{{faction}}</td>
+            <td class="ch-{{specialty}}">{{specialty}}</td>
+            <td class="ch-{{overall this true}}">{{overall this}}</td>
+            <td class="ch-{{bookvalue}}">{{bookvalue}}</td>
+            <td class="ch-{{clanboss}}">{{clanboss}}</td>
+            <td class="ch-{{arena}}">{{arena}}</td>
+            <td class="ch-{{farmer}}">{{farmer}}</td>
+            <td class="ch-{{factionwars}}">{{factionwars}}</td>
+            <td class="ch-{{dragon}}">{{dragon}}</td>
+            <td class="ch-{{spider}}">{{spider}}</td>
+            <td class="ch-{{minotaur}}">{{minotaur}}</td>
+            <td class="ch-{{fireknight}}">{{fireknight}}</td>
+            <td class="ch-{{icegolem}}">{{icegolem}}</td>
+            <td class="ch-{{voidkeep}}">{{voidkeep}}</td>
+            <td class="ch-{{spiritkeep}}">{{spiritkeep}}</td>
+            <td class="ch-{{magickeep}}">{{magickeep}}</td>
+            <td class="ch-{{forcekeep}}">{{forcekeep}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <button data-toggle="modal" data-target="#modal_aside_left" data-url="/ui/character/create"
+        data-event="Character_Created" class="btn ml-2 btn-success" type="button"> Add Character </button>
     </div>
   </div>
-
-  <div class="col-6">
-    <div class="list-group list-group-flush">
-      
-      <div class="accordion" id="playerAccordion">
-        <div class="row">
-          <div id="characterSection" class="collapse show" aria-labelledby="headingOne" data-parent="#playerAccordion">
-            <h3>Characters</h3>
-            <div id="characterList"></div>
-            {{#each player.Characters}}
-              {{name}}
-            {{/each}}
-            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.<br />
-            3 wolf moon officia aute, non cupidatat skateboard dolor brunch.<br />
-            Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-            single-origin coffee nulla assumenda shoreditch et.<br />
-            Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
-            excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
-            you probably haven't heard of them accusamus labore sustainable VHS.</p>
-            <button data-toggle="modal" data-target="#modal_aside_left" data-url="/ui/character/create" data-event="Character_Created" class="btn ml-2 btn-success" type="button">  Add Character  </button>
-          </div>
-        </div>
-        <div class="row">
-          <div id="artifactSection" class="collapse" aria-labelledby="headingTwo" data-parent="#playerAccordion">
-            <h3>Artifacts</h3>
-            {{#each player.Artifacts}}
-              {{name}}
-            {{/each}}
-          </div>
-        </div>
-        <div class="row">
-          <div id="setSection" class="collapse" aria-labelledby="headingThree" data-parent="#playerAccordion">
-            <div class="list-group list-group-flush">
-            <h3>Sets</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
 </div>
+
+<script>
+  $(document).ready(() => {
+    $('#characterList').bootstrapTable()
+  })
+</script>

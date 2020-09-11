@@ -226,6 +226,43 @@ html {
   transform: translateX(0);
 }
 
+/****** BS TABLE ******/
+.ch-Legendary {
+  background-color: #ed8100 !important;
+}
+
+.ch-Epic {
+  background-color: #e74aff !important;
+}
+
+.ch-Rare {
+  background-color: #2a97ff !important;
+}
+
+.ch-0 {
+  background-color: #66603e !important;
+}
+
+.ch-4, .ch-3, .ch-2, .ch-1 {
+  background-color: #aeaeae !important;
+}
+
+.ch-6, .ch-5 {
+  background-color: #1bcf40 !important;
+}
+
+.ch-8, .ch-7 {
+  background-color: #2a97ff !important;
+}
+
+.ch-9 {
+  background-color: #e74aff !important;
+}
+
+.ch-10 {
+  background-color: #ed8100 !important;
+}
+
 .container {
   width: 100%;
   padding-right: 15px;
